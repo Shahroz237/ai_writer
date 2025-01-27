@@ -43,10 +43,8 @@ class _ToolListState extends State<ToolList> {
                 child: const Text(
                   'Show All',
                   style: TextStyle(color: Color(0xff6C6C6C), fontSize: 17),
-                ),
-              ),
-            ],
-          ),
+                ),),
+            ],),
         ),
         if (!isGridview)
           SizedBox(
@@ -74,26 +72,21 @@ class _ToolListState extends State<ToolList> {
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
-                        ),
-                      ),
+                        ),),
                     ],
-                  ),
-                );
-              },
-            ),
-          ),
+                  ),);
+              },),),
         if (isGridview)
           SizedBox(
             height: context.h(.4),
             child: GridView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 mainAxisSpacing: 2,
                 crossAxisSpacing: 2,
-                childAspectRatio: 3/ 4,
-              ),
+                childAspectRatio: 3/ 4,),
               itemCount: 6, // Or your dynamic count
               itemBuilder: (BuildContext context, int index) {
                 return Column(
@@ -103,8 +96,7 @@ class _ToolListState extends State<ToolList> {
                       width: context.w(.26),
                       decoration: BoxDecoration(
                         color: AppConstants.tabBackgroundColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
+                        borderRadius: BorderRadius.circular(8),),
                       child: Center(child: SvgPicture.asset('assets/ai_upwork.svg')),
                     ),
                     5.h,
@@ -113,14 +105,9 @@ class _ToolListState extends State<ToolList> {
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ),
-      ],
-    );
+                      ),),
+                  ],);
+              },),),
+      ],);
   }
 }

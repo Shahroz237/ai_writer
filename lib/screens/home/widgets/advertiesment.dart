@@ -1,5 +1,6 @@
 import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 class Advertisement extends StatelessWidget {
@@ -20,8 +21,7 @@ class Advertisement extends StatelessWidget {
               15.h,
             SvgPicture.asset('assets/gift_icon.svg'),
                   15.w,
-            const Text('Try UpAlert 3 days for free.\nActivate premium', style: TextStyle(color: AppConstants.blackColor, fontSize: 16, fontWeight: FontWeight.w500),),
-
+            Text('Try UpAlert 3 days for free.\nActivate premium', style:AppTextStyles.premiumText,),
           ],
         ),
       ),

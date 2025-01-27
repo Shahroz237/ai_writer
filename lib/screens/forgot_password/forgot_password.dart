@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../utils/app_constants/constants.dart';
 import '../../utils/reusable/custom_textfield.dart';
+import '../../utils/textstyles/text_styles.dart';
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
   @override
@@ -13,8 +14,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   final emailController=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final width=MediaQuery.sizeOf(context).width*1;
-    final height=MediaQuery.sizeOf(context).height*1;
     return Scaffold(
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(left: 28.0),
@@ -49,11 +48,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                      Positioned(
                          top: context.h(.074),
                          width: context.w(1),
-                         child: const Center(child: Text('Check your email', style: TextStyle(color: AppConstants.blackColor,fontSize: 23,fontWeight: FontWeight.w700, fontFamily: 'MyFont'),))),
+                         child:  Center(child: Text('Check your email', style: AppTextStyles.emailCheckALrtText))),
                      Positioned(
                          top: context.h(.13),
                          width: context.w(1),
-                         child: const Center(child: Text('    We have sent an instruction to\nrecover your password to your email', style: TextStyle(color: Color(0xff606060), fontSize: 15, fontFamily: 'MyFont'),))),
+                         child:  Center(child: Text('    We have sent an instruction to\nrecover your password to your email', style: AppTextStyles.helperText))),
                      Positioned(
                        top: context.h(.21),
                        width: context.w(1),
@@ -83,7 +82,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     child: SvgPicture.asset('assets/images.svg',fit: BoxFit.cover,),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    padding:  const EdgeInsets.symmetric(horizontal: 12.0),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -99,13 +98,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               },
                               icon: const Icon(Icons.arrow_back_outlined,color: AppConstants.whiteColor,size: 30,)),
                                      55.h,
-                          const Text('Forgot Password', style: TextStyle(fontSize: 31, fontWeight: FontWeight.w700,
-                              fontFamily: 'MyFont',
-                              color: AppConstants.whiteColor ),),
+                           Text('Forgot Password', style: AppTextStyles.headlinesText),
                                             2.h,
-                          const Text('Enter your email account to reset password', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400,
-                              fontFamily: 'MyFont',
-                              color: AppConstants.whiteColor ),),
+                        Text('Enter your email account to reset password', style: AppTextStyles.subHeadlinesText),
                         ]),
                   ),
                 ],

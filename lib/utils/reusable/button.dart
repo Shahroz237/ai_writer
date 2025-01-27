@@ -1,5 +1,6 @@
 import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 class CustomElevatedButton extends StatelessWidget {
   final String text;
@@ -19,7 +20,8 @@ class CustomElevatedButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
             )
           ),
-          child: Text(text, style: const TextStyle(color: AppConstants.whiteColor, fontFamily: 'MyFont', fontWeight: FontWeight.w700,fontSize: 18),)),
+          child: Text(text, style: AppTextStyles.elevatedButtonText),
+    ),
     );
   }
 }

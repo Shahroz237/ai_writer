@@ -7,6 +7,7 @@ import 'package:ai_writer/utils/reusable/button.dart';
 import 'package:ai_writer/utils/reusable/custom_textfield.dart';
 import 'package:ai_writer/utils/reusable/divider.dart';
 import 'package:ai_writer/utils/reusable/social_login_buttons.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import '../../utils/app_constants/constants.dart';
 class SignIn extends StatefulWidget {
@@ -28,7 +29,7 @@ class _SignInState extends State<SignIn> {
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                   const TopContainerSignin(),
+                   const TopContainerSignIn(),
                    20.h,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -67,10 +68,7 @@ class _SignInState extends State<SignIn> {
                         ),
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> const ForgotPassword()));
-                        }, child: const Text('Forgot Password', style: TextStyle(
-                      fontSize: 16,
-                      color: AppConstants.buttonColor,
-                    ),
+                        }, child:  Text('Forgot Password', style: AppTextStyles.textButtonText,
                     )),
                   ),
                   CustomElevatedButton(text: 'Login', onPress: (){

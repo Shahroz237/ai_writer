@@ -1,5 +1,6 @@
 import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 class top_container extends StatefulWidget {
@@ -13,10 +14,10 @@ class _top_containerState extends State<top_container> {
     return Container(
       height: context.h(.29),
       width: double.infinity,
-      decoration:  const BoxDecoration(
+      decoration:   const BoxDecoration(
         gradient: LinearGradient(colors: [
-          Color(0xffBEC1BF),
-          Color(0xffF8F8F8),
+          AppConstants.gradientColorPrimary,
+           AppConstants.gradientColorSecondary,
         ]),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
@@ -24,13 +25,13 @@ class _top_containerState extends State<top_container> {
         )
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding:  const EdgeInsets.symmetric(horizontal: 12.0),
         child: Column(
           children: [
           10.h,
             Row(
               children: [
-                const Text('Welcome!', style: TextStyle(fontFamily: 'MyFont', fontSize: 33, fontWeight: FontWeight.w500, color: AppConstants.blackColor),),
+                Text('Welcome!', style:AppTextStyles.welcomeText),
                 const Spacer(),
                Container(
                  height: context.h(.11),
@@ -52,9 +53,9 @@ class _top_containerState extends State<top_container> {
               width: double.infinity,
               decoration:  BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                gradient: const LinearGradient(colors: [
-                  Color(0xff990D06),
-                  Color(0xff330402),
+                gradient:  const LinearGradient(colors: [
+                  AppConstants.topContainerGradientColorPrimary,
+                  AppConstants.topContainerGradientColorSecondary,
                 ]),
               ),
               child:    Padding(
@@ -65,14 +66,14 @@ class _top_containerState extends State<top_container> {
                 10.h,
                    Row(
                       children: [
-                        const Text('Ai Credit Balance:',style: TextStyle(color: AppConstants.whiteColor, fontSize: 15, fontWeight: FontWeight.w600,fontFamily:'MyFont'),),
+                         Text('Ai Credit Balance:',style: AppTextStyles.balanceText),
                        2.w,
-                        const Text('0', style: TextStyle(color: AppConstants.yellowColor,fontFamily:'MyFont',fontSize: 15, fontWeight: FontWeight.w600),),
+                         Text('0', style: AppTextStyles.showBalanceText,),
                       ],
                     ),
                     Row(
                       children: [
-                        const Text('It is a long established fact that a reader will be \ndistracted by the readable ', style: TextStyle(color: AppConstants.whiteColor, fontFamily: 'MyFont', fontSize: 10 ),),
+                        Text('It is a long established fact that a reader will be \ndistracted by the readable ', style: AppTextStyles.topContainerDescriptionText),
                         const Spacer(),
                        CircleAvatar(
                          backgroundColor: AppConstants.whiteColor,
@@ -87,26 +88,22 @@ class _top_containerState extends State<top_container> {
                       height: context.h(.044),
                       width: context.w(.34),
                       decoration: BoxDecoration(
-                        color: AppConstants.yellowColor,
+                        color: AppConstants.balanceShowColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: const Row(
+                      child:  Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.only(right: 4.0),
                           child: Icon(Icons.add, color: AppConstants.blackColor, size: 20,),
                         ),
-                          Text('ADD MORE', style: TextStyle(color: AppConstants.blackColor, fontSize: 15),)
+                          Text('ADD MORE',style: AppTextStyles.addMoreText,)
                         ],),
-                    )],
-                ),
-              ),
-            )
-          ],
-        ),
+                    )],),
+              ),)
+          ],),
       ),
-
     );
   }
 }

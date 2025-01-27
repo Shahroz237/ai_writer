@@ -7,6 +7,7 @@ class BottomNavProvider extends ChangeNotifier{
 
   void updateIndex(int index){
     _currentIndex=index;
+
     notifyListeners();
   }
 

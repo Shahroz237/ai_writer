@@ -1,3 +1,40 @@
+//buildscript {
+//    ext.kotlin_version = "1.9.0" // Add or update this line with the required Kotlin version
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath "com.android.tools.build:gradle:8.0.2" // Use the appropriate version for your project
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//    }
+//}
+//
+//allprojects {
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//}
+//
+//rootProject.buildDir = "../build"
+//subprojects {
+//    project.buildDir = "${rootProject.buildDir}/${project.name}"
+//}
+//subprojects {
+//    project.evaluationDependsOn(":app")
+//}
+//
+//tasks.register("clean", Delete) {
+//    delete rootProject.buildDir
+//}
+
+
+
+
+
+
+
 allprojects {
     repositories {
         google()

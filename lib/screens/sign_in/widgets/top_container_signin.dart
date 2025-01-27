@@ -1,16 +1,16 @@
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../utils/app_constants/constants.dart';
-class TopContainerSignin extends StatefulWidget {
-  const TopContainerSignin({super.key});
+class TopContainerSignIn extends StatefulWidget {
+  const TopContainerSignIn({super.key});
   @override
-  State<TopContainerSignin> createState() => _TopContainerSigninState();
+  State<TopContainerSignIn> createState() => _TopContainerSignInState();
 }
-class _TopContainerSigninState extends State<TopContainerSignin> {
+class _TopContainerSignInState extends State<TopContainerSignIn> {
   @override
   Widget build(BuildContext context) {
-
     return Stack(
       children:[ SizedBox(
         height: context.h(.3),
@@ -23,16 +23,10 @@ class _TopContainerSigninState extends State<TopContainerSignin> {
           child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Sign in to your', style: TextStyle(fontSize: 33, fontWeight: FontWeight.w700,
-                    fontFamily: 'MyFont',
-                    color: AppConstants.whiteColor ),),
-                const Text('Account', style: TextStyle(fontSize: 33, fontWeight: FontWeight.w700,
-                    fontFamily: 'MyFont',
-                    color: AppConstants.whiteColor ),),
+                 Text('Sign in to your', style: AppTextStyles.headlinesText),
+                Text('Account', style: AppTextStyles.headlinesText),
                           2.h,
-                const Text('Sign in to your account', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,
-                    fontFamily: 'MyFont',
-                    color: AppConstants.whiteColor ),),
+                 Text('Sign in to your account', style: AppTextStyles.subHeadlinesText),
               ]
           ),),
       ],);

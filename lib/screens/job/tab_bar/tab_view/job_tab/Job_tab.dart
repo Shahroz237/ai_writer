@@ -1,5 +1,6 @@
 import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 class JobTab extends StatefulWidget {
@@ -23,7 +24,7 @@ class _JobTabState extends State<JobTab> {
             });
           },
           child: Container(
-            height: context.h(.21),
+            height: context.h(.23),
             width: double.infinity,
             decoration: BoxDecoration(
               color: selectedIndex==index?  AppConstants.onTapColor: AppConstants.unTapColor,
@@ -34,31 +35,24 @@ class _JobTabState extends State<JobTab> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   const Text("Front end developer needed for\ninternal corporate app MVP - upwork", style: TextStyle(
-                        color: AppConstants.blackColor,
-                     fontSize: 14,
-                     fontWeight: FontWeight.w700,
-                   ),),
+                    Text("Front end developer needed for\ninternal corporate app MVP - upwork", style: AppTextStyles.jobListSemiBoldText,),
                        2.h,
-                   const Text('15.00 - 30.00', style: TextStyle(color: AppConstants.textColor, fontSize: 11)),
+                    Text('15.00 - 30.00', style: AppTextStyles.jobListRegularText),
                            2.h,
                   Row(
                     children: [
                       SvgPicture.asset('assets/location_icon.svg',),
                                2.w,
-                      const Text('United Kingdom', style: TextStyle(color: AppConstants.textColor, fontSize: 12, fontWeight: FontWeight.w500)),
+                       Text('United Kingdom', style: AppTextStyles.jobListRegularText),
                             15.w,
                       SvgPicture.asset('assets/clock_icon.svg',),
-                       const Text('5 hours ago', style: TextStyle(fontSize: 12, color: Color(0xff858585),fontWeight: FontWeight.w400),)
+                        Text('5 hours ago', style: AppTextStyles.jobListRegularText),
                     ],
                   ),
                         2.h,
-                  const Text("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+                   Text("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
                 overflow: TextOverflow.visible,
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Color(0xff484848),
-                  ),
+                  style: AppTextStyles.jobListLightText
                   )
                 ],),
             ),

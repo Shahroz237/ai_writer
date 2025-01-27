@@ -50,7 +50,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
-                color:AppConstants.fieldFocusColor,
+                color:AppConstants.fieldBorderColor,
               )
           )
       ),

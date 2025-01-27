@@ -1,3 +1,4 @@
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import '../app_constants/constants.dart';
 class ReuseableDivider extends StatefulWidget {
@@ -8,17 +9,17 @@ class ReuseableDivider extends StatefulWidget {
 class _ReuseableDividerState extends State<ReuseableDivider> {
   @override
   Widget build(BuildContext context) {
-    return  const Row(
+    return    Row(
       children: [
-        Expanded(
+        const Expanded(
           child: Divider(
             color: AppConstants.dividerColor,),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text('or', style: TextStyle(color: Color(0xff9E9E9E), fontSize: 21, fontFamily: 'MyFont', fontWeight: FontWeight.w400),),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text('or', style: AppTextStyles.dividerText),
         ),
-        Expanded(
+        const Expanded(
           child: Divider(
             color: AppConstants.dividerColor,
           ),

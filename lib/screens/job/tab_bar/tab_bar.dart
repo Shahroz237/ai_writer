@@ -1,6 +1,8 @@
 import 'package:ai_writer/screens/job/tab_bar/tab_view/category_tab/category_tab.dart';
 import 'package:ai_writer/screens/job/tab_bar/tab_view/job_tab/Job_tab.dart';
+import 'package:ai_writer/screens/job/tab_bar/tab_view/job_tab/job_not_available.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import '../../../../../utils/app_constants/constants.dart';
 class CustomTabbar extends StatefulWidget {
@@ -32,18 +34,14 @@ class _CustomTabbarState extends State<CustomTabbar> with TickerProviderStateMix
                   dividerColor: Colors.transparent,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: AppConstants.buttonColor,
+                    color: AppConstants.themeColor,
                   ),
                   controller: tabController,
                   isScrollable: false, // Disable scrollable tabs to divide evenly
-                  unselectedLabelColor: Colors.grey, // Unselected tab text color
-                  labelColor: Colors.white, // Selected tab text color
+                  unselectedLabelColor: AppConstants.unselectedTabColor, // Unselected tab text color
+                  labelColor: AppConstants.whiteColor, // Selected tab text color
                   labelPadding: EdgeInsets.zero, // Remove padding around the label
-                  labelStyle: const TextStyle(
-                 color: AppConstants.whiteColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                  ),
+                  labelStyle: AppTextStyles.tabsText,
                   tabs: [
                     SizedBox(
                       width: context.w(.45), // Adjust width manually

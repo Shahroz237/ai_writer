@@ -1,6 +1,7 @@
 import 'package:ai_writer/screens/job/tab_bar/tab_view/category_tab/add_category.dart';
 import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 class CategoryTab extends StatefulWidget {
   const CategoryTab({super.key});
@@ -25,11 +26,11 @@ class _CategoryTabState extends State<CategoryTab> {
                 7.h,
        Row(
          children: [
-           const Text('Categories', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: AppConstants.blackColor),),
+            Text('Categories', style: AppTextStyles.categoryBoldText),
            const Spacer(),
            TextButton(
                style: TextButton.styleFrom(
-                 padding: EdgeInsets.all(6),
+                 padding: const EdgeInsets.all(6),
                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                ),
                onPressed: (){
@@ -40,7 +41,7 @@ class _CategoryTabState extends State<CategoryTab> {
                         return const BottomContainer();
                       });
 
-           }, child: const Text('+Add New', style: TextStyle(color: AppConstants.buttonColor, fontSize: 15, fontWeight: FontWeight.w300),)),
+           }, child:  Text('+Add New', style: AppTextStyles.textButtonText)),
          ],
        ),
           Expanded(
@@ -57,7 +58,7 @@ class _CategoryTabState extends State<CategoryTab> {
                   borderRadius: BorderRadius.circular(10),
                   ),
                   child: ListTile(
-                    title: Text(AppConstants.categoryList[index],style: const TextStyle(fontSize: 17, color: AppConstants.blackColor, fontWeight: FontWeight.w500,),),
+                    title: Text(AppConstants.categoryList[index],style: AppTextStyles.categorySemiBoldText,),
                   subtitle: Row(
                     children: [
                       TextButton(
@@ -67,7 +68,7 @@ class _CategoryTabState extends State<CategoryTab> {
                             minimumSize: const Size(5, 20),
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
-                          child: const Text('view jobs', style: TextStyle(fontSize: 11, color: Color(0xff009D00),),)),
+                          child:  Text('view jobs', style: AppTextStyles.categoryButtonText)),
                             25.w,
                       TextButton(onPressed: (){},
                           style: TextButton.styleFrom(
@@ -75,15 +76,15 @@ class _CategoryTabState extends State<CategoryTab> {
                             minimumSize: const Size(5, 20),
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
-                          child: const Text('Delete', style: TextStyle(fontSize: 11, color: AppConstants.buttonColor,),)),],
+                          child:  Text('Delete', style: AppTextStyles.categoryButtonDeleteText,)),],
                   ),
                     trailing: Transform.scale(
                       scale: .6,
                       child: Switch(value: switchStates[index],
                           activeColor:  AppConstants.whiteColor,
                           inactiveThumbColor: AppConstants.whiteColor,
-                          inactiveTrackColor: const Color(0xff8E8E8E),
-                          activeTrackColor:const Color(0xff0CBA02) ,
+                          inactiveTrackColor: AppConstants.inActiveSwitchColor,
+                          activeTrackColor:AppConstants.switchColor ,
                           onChanged: (bool value){
                         setState(() {
                           switchStates[index]=value;
@@ -93,9 +94,6 @@ class _CategoryTabState extends State<CategoryTab> {
                 ),
               );
             }),
-          )
-        ],
-      ),
-    );
-  }
+          )],
+      ),);}
 }

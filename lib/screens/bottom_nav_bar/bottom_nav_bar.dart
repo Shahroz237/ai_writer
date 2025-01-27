@@ -23,111 +23,58 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
   @override
   Widget build(BuildContext context) {
-    final bottomNavBarProvider=Provider.of<BottomNavProvider>(context, listen: true);
+    final bottomNavBarProvider=Provider.of<BottomNavProvider>(context,);
        int selectedIndex=bottomNavBarProvider.currentIndex;
        debugPrint('Print error');
     return Scaffold(
-      bottomNavigationBar: Consumer<BottomNavProvider>(
-        builder: (context, value, child){
-          return BottomNavigationBar(
-              selectedItemColor: AppConstants.buttonColor,
-              unselectedItemColor: AppConstants.blackColor,
-              elevation: 10,
-              selectedLabelStyle: const TextStyle(fontFamily: 'MyFont', ),
-              currentIndex: selectedIndex,
-              showUnselectedLabels: true,
-              onTap: (index){
+      bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: AppConstants.themeColor,
+          unselectedItemColor: AppConstants.blackColor,
+          elevation: 10,
+          selectedLabelStyle: const TextStyle(fontFamily: 'MyFont', ),
+          currentIndex: selectedIndex,
+          showUnselectedLabels: true,
+          onTap: (index){
 
-                bottomNavBarProvider.updateIndex(index);
-              },
-              items: [
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(selectedIndex==0 ?'assets/home_icon_tap.svg': 'assets/home_icon.svg',
-                    height: 20,
-                    width: 20,
-                  ),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(selectedIndex==1 ?'assets/jobs_tap.svg': 'assets/jobs.svg',
-                    height: 20,
-                    width: 20,
-                  ),
-                  label: 'Jobs',
-                ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(selectedIndex==2 ?'assets/alert_tap.svg': 'assets/alert.svg',
-                    height: 20,
-                    width: 20,
-                  ),
-                  label: 'Alert',
-                ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(selectedIndex==3 ?'assets/portfolio_tap.svg': 'assets/portfolio.svg',
-                    height: 20,
-                    width: 20,
-                  ),
-                  label: 'Portfolio',
-                ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(selectedIndex==4 ? 'assets/activity_tap.svg':'assets/activity.svg',
-                    height: 20,
-                    width: 20,
-                  ),
-                  label: 'Activity',
-                ),
-              ]);
-        },
-
-        // child: BottomNavigationBar(
-        //     selectedItemColor: AppConstants.buttonColor,
-        //     unselectedItemColor: AppConstants.blackColor,
-        //     elevation: 10,
-        //     selectedLabelStyle: const TextStyle(fontFamily: 'MyFont', ),
-        //     currentIndex: selectedIndex,
-        //     showUnselectedLabels: true,
-        //     onTap: (index){
-        //
-        //       bottomNavBarProvider.updateIndex(index);
-        //     },
-        //     items: [
-        //       BottomNavigationBarItem(
-        //         icon: SvgPicture.asset(selectedIndex==0 ?'assets/home_icon_tap.svg': 'assets/home_icon.svg',
-        //           height: 20,
-        //           width: 20,
-        //         ),
-        //         label: 'Home',
-        //       ),
-        //       BottomNavigationBarItem(
-        //         icon: SvgPicture.asset(selectedIndex==1 ?'assets/jobs_tap.svg': 'assets/jobs.svg',
-        //           height: 20,
-        //           width: 20,
-        //         ),
-        //         label: 'Jobs',
-        //       ),
-        //       BottomNavigationBarItem(
-        //         icon: SvgPicture.asset(selectedIndex==2 ?'assets/alert_tap.svg': 'assets/alert.svg',
-        //           height: 20,
-        //           width: 20,
-        //         ),
-        //         label: 'Alert',
-        //       ),
-        //       BottomNavigationBarItem(
-        //         icon: SvgPicture.asset(selectedIndex==3 ?'assets/portfolio_tap.svg': 'assets/portfolio.svg',
-        //           height: 20,
-        //           width: 20,
-        //         ),
-        //         label: 'Portfolio',
-        //       ),
-        //       BottomNavigationBarItem(
-        //         icon: SvgPicture.asset(selectedIndex==4 ? 'assets/activity_tap.svg':'assets/activity.svg',
-        //           height: 20,
-        //           width: 20,
-        //         ),
-        //         label: 'Activity',
-        //       ),
-        //     ]),
-      ),
+            bottomNavBarProvider.updateIndex(index);
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(selectedIndex==0 ?'assets/home_icon_tap.svg': 'assets/home_icon.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(selectedIndex==1 ?'assets/jobs_tap.svg': 'assets/jobs.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Jobs',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(selectedIndex==2 ?'assets/alert_tap.svg': 'assets/alert.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Alert',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(selectedIndex==3 ?'assets/portfolio_tap.svg': 'assets/portfolio.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Portfolio',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(selectedIndex==4 ? 'assets/activity_tap.svg':'assets/activity.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Activity',
+            ),
+          ]),
       body: screens[selectedIndex],
     );
   }

@@ -1,23 +1,19 @@
 import 'package:ai_writer/utils/gap/gap.dart';
+import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
-
-import '../../../utils/app_constants/constants.dart';
 import '../../Register/register.dart';
-
 class BottomTextButton extends StatefulWidget {
   const BottomTextButton({super.key});
-
   @override
   State<BottomTextButton> createState() => _BottomTextButtonState();
 }
-
 class _BottomTextButtonState extends State<BottomTextButton> {
   @override
   Widget build(BuildContext context) {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Don't have an Account?", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, fontFamily: 'MyFont', color: Color(0xff595959)),),
+        Text("Don't have an Account?", style: AppTextStyles.helperText,),
          4.w,
         TextButton(
           style: TextButton.styleFrom(
@@ -27,10 +23,7 @@ class _BottomTextButtonState extends State<BottomTextButton> {
           ),
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> const Register()));},
-          child: const Text('Register', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, fontFamily: 'MyFont', color: AppConstants.buttonColor),),
-        )
-      ],
-    );
-
-  }
+          child:  Text('Register', style: AppTextStyles.textButtonText,),
+        )],
+    );}
 }
