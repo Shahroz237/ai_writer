@@ -96,10 +96,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
             focusNode: countryFocus,
           ),
                 10.h,
-
-
-
-
         ],
       ),
     );
