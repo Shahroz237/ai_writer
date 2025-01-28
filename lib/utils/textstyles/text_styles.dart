@@ -106,6 +106,21 @@ class AppTextStyles{
  static TextStyle showBalanceText= const    TextStyle(color: AppConstants.balanceShowColor,fontFamily:'MyFont',fontSize: 15, fontWeight: FontWeight.w600);
  static TextStyle addMoreText= const  TextStyle(color: AppConstants.blackColor, fontSize: 15);
  static TextStyle topContainerDescriptionText= const TextStyle(color: AppConstants.whiteColor, fontFamily: 'MyFont', fontSize: 10 );
+ static TextStyle appbarText= const TextStyle(fontSize: 26, color: AppConstants.whiteColor, fontWeight: FontWeight.w500);
+ static TextStyle portfolioHeadingText=  const TextStyle(fontSize: 17, color: AppConstants.blackColor, fontWeight: FontWeight.w500);
 
+ static TextStyle dropDownText=  const TextStyle(color: AppConstants.blackColor, fontSize: 15);
+ static TextStyle activityListTitleText=  const TextStyle(fontSize: 15, color: AppConstants.blackColor, fontWeight: FontWeight.w500);
+
+ static TextStyle activityListLightText= const TextStyle(color: AppConstants.jobListTextColor,
+     fontSize: 13,
+
+     overflow: TextOverflow.ellipsis,
+     fontWeight: FontWeight.w400);
+
+ static TextStyle settingHeadlineText= const TextStyle(fontSize: 23, color: AppConstants.settingTitleTextColor, fontWeight: FontWeight.w400);
+ static TextStyle accountTitleText= const TextStyle(fontSize: 23, color: AppConstants.blackColor, fontWeight: FontWeight.w600);
+ static TextStyle settingTitleText= const TextStyle(fontSize: 20, color: AppConstants.blackColor, fontWeight: FontWeight.w200);
+ static TextStyle profileTitleText= const TextStyle(color: AppConstants.blackColor, fontSize: 20, fontWeight: FontWeight.w600);
 
 }

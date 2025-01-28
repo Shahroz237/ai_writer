@@ -83,7 +83,7 @@ class _SignInState extends State<SignIn> {
                       15.h,
                       const SocialLoginButtons(text: 'Google', image: 'assets/google.svg'),
                       10.h,
-                      const SocialLoginButtons(text: 'Facebook', image: 'assets/Facebook.svg'),
+                      const SocialLoginButtons(text: 'Facebook', image: 'assets/fb.svg'),
                       15.h,
                 const BottomTextButton(),
                               ],),

@@ -3,7 +3,7 @@ import 'package:ai_writer/utils/reusable/appbar.dart';
 import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/app_constants/constants.dart';
+import '../../utils/app_constants/constants.dart';
 class Alert extends StatefulWidget {
   const Alert({super.key});
   @override
@@ -15,8 +15,8 @@ class _AlertState extends State<Alert> {
     return Scaffold(
       body: Column(
         children: [
-         const AppbarContainer(widgetList: [
-      Text('Alert', style: TextStyle(fontSize: 28, color: AppConstants.whiteColor, fontWeight: FontWeight.w500),
+          AppbarContainer(widgetList: [
+      Text('Alert', style: AppTextStyles.appbarText,
       ),
          ]),
           130.h,

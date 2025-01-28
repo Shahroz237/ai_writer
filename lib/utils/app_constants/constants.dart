@@ -24,9 +24,20 @@ class AppConstants{
        static const Color dividerTextColor=Color(0xff9E9E9E);
        static const Color socialButtonBorderColor=Color(0xff9E9E9E);
        static const Color categoryListColor=Color(0xffF3F3F3);
+       static const Color textFieldTextColor=Color(0xff484848);
+       static const Color textFieldBorderColor=Color(0xff79747E);
+       static const Color hintTextColor=Color(0xff525252);
+       static const Color settingTitleTextColor=Color(0xff494949);
+       static const Color trailingBackColor=Color(0xffF5F5F5);
+       static const Color avatarBackColor=Color(0xffE7E7E7);
+       static const Color profileAvatarColor=Color(0xff3e5162);
+       static const Color profileBorderColor=Color(0xffE6E6E6);
+
+
+
+
+
+
        static  List<String> categoryList=['Web Development', 'Ui/UX Design','Flutter'];
-
-
-
 
 }

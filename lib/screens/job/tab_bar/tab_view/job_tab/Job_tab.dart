@@ -16,7 +16,7 @@ class _JobTabState extends State<JobTab> {
         itemCount: 6,
         itemBuilder: (context, index){
       return Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 16),
         child: GestureDetector(
           onTap: (){
             setState(() {

@@ -16,16 +16,17 @@ class _AlertState extends State<Alert> {
     return Scaffold(
       body: Column(
         children: [
-         const AppbarContainer(widgetList: [
-      Text('Alert', style: TextStyle(fontSize: 28, color: AppConstants.whiteColor, fontWeight: FontWeight.w500),
+          AppbarContainer(widgetList: [
+      Text('Alert', style: AppTextStyles.appbarText,
       ),
           ]),
+
     Expanded(
       child: ListView.builder(
       itemCount: 6,
       itemBuilder: (context, index){
       return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left:8.0, right: 8, bottom: 16),
       child: GestureDetector(
       onTap: (){
       setState(() {
@@ -67,6 +68,8 @@ class _AlertState extends State<Alert> {
       ),);
       }),
     ),
+          15.h,
+
         ],
       ),
     );

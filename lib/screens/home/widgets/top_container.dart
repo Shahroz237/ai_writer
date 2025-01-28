@@ -3,6 +3,8 @@ import 'package:ai_writer/utils/gap/gap.dart';
 import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../setting/setting.dart';
 class top_container extends StatefulWidget {
   const top_container({super.key});
   @override
@@ -33,14 +35,19 @@ class _top_containerState extends State<top_container> {
               children: [
                 Text('Welcome!', style:AppTextStyles.welcomeText),
                 const Spacer(),
-               Container(
-                 height: context.h(.11),
-                 width: context.w(.11),
-                 decoration: const BoxDecoration(
-                   shape: BoxShape.circle,
-                   color: AppConstants.whiteColor,
+               GestureDetector(
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const Setting()));
+                 },
+                 child: Container(
+                   height: context.h(.11),
+                   width: context.w(.11),
+                   decoration: const BoxDecoration(
+                     shape: BoxShape.circle,
+                     color: AppConstants.whiteColor,
+                   ),
+                   child: Center(child: SvgPicture.asset('assets/setting_icon.svg',)),
                  ),
-                 child: Center(child: SvgPicture.asset('assets/setting_icon.svg',)),
                ),
                   15.w,
                 const CircleAvatar(

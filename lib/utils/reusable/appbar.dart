@@ -20,7 +20,7 @@ class AppbarContainer extends StatelessWidget {
           )
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 75,left: 12),
+        padding: const EdgeInsets.only(top: 75,left: 12, right: 12),
         // child: Text('Jobs', style: TextStyle(fontSize: 28, color: AppConstants.whiteColor, fontWeight: FontWeight.w500, ),),
                child: Row(
                  crossAxisAlignment: CrossAxisAlignment.start,
