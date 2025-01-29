@@ -1,3 +1,4 @@
+import 'package:ai_writer/firebase_services/signin_google.dart';
 import 'package:ai_writer/screens/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:ai_writer/screens/forgot_password/forgot_password.dart';
 import 'package:ai_writer/screens/sign_in/widgets/bottom_textbutton.dart';
@@ -6,8 +7,10 @@ import 'package:ai_writer/utils/gap/gap.dart';
 import 'package:ai_writer/utils/reusable/button.dart';
 import 'package:ai_writer/utils/reusable/custom_textfield.dart';
 import 'package:ai_writer/utils/reusable/divider.dart';
+import 'package:ai_writer/utils/reusable/flushbar.dart';
 import 'package:ai_writer/utils/reusable/social_login_buttons.dart';
 import 'package:ai_writer/utils/textstyles/text_styles.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../utils/app_constants/constants.dart';
 class SignIn extends StatefulWidget {
@@ -21,6 +24,8 @@ class _SignInState extends State<SignIn> {
   FocusNode emailFocus=FocusNode();
   FocusNode passwordFocus=FocusNode();
   bool isPassVisible=true;
+  final _formKey=GlobalKey<FormState>();
+  final auth=FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
 
@@ -35,29 +40,34 @@ class _SignInState extends State<SignIn> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
-                      CustomTextFormField(labelText: 'Email',
-                               controller: emailController,
-                           focusNode: emailFocus,
-                             onFieldSubmitted: (){
-                             FocusScope.of(context).requestFocus(passwordFocus);
-                             },
-                           ),
-               20.h,
-                  CustomTextFormField(labelText: 'Password',
-                    controller: passwordController,
-                  inputAction: TextInputAction.done,
-                  focusNode: passwordFocus,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: isPassVisible,
-                    suffixIcon: IconButton(
-                      onPressed: (){
-                setState(() {
-                isPassVisible=! isPassVisible;
-                });
-                },
-                  icon: isPassVisible
-                      ? const Icon(Icons.visibility, color: AppConstants.blackColor)
-                      : const Icon(Icons.visibility_off, color: AppConstants.blackColor),),),
+                      Form(
+                          key: _formKey,
+                          child: Column(children: [
+                            CustomTextFormField(labelText: 'Email',
+                              controller: emailController,
+                              focusNode: emailFocus,
+                              onFieldSubmitted: (){
+                                FocusScope.of(context).requestFocus(passwordFocus);
+                              },
+                            ),
+                            20.h,
+                            CustomTextFormField(labelText: 'Password',
+                              controller: passwordController,
+                              inputAction: TextInputAction.done,
+                              focusNode: passwordFocus,
+                              keyboardType: TextInputType.visiblePassword,
+                              obscureText: isPassVisible,
+                              suffixIcon: IconButton(
+                                onPressed: (){
+                                  setState(() {
+                                    isPassVisible=! isPassVisible;
+                                  });
+                                },
+                                icon: isPassVisible
+                                    ? const Icon(Icons.visibility, color: AppConstants.blackColor)
+                                    : const Icon(Icons.visibility_off, color: AppConstants.blackColor),),),
+                      ],)),
+
                   Align(
                     alignment: Alignment.topRight,
                     child: TextButton(
@@ -72,7 +82,20 @@ class _SignInState extends State<SignIn> {
                     )),
                   ),
                   CustomElevatedButton(text: 'Login', onPress: (){
-                         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> const BottomNavBar()), (route)=> false);
+
+                    if(_formKey.currentState!.validate()){
+                        auth.signInWithEmailAndPassword(
+                            email: emailController.text.toString(),
+                            password: passwordController.text.toString()).then((value){
+                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                              builder: (context) => const BottomNavBar()), (
+                              route) => false);
+                              FlushBar().showFlushBar('Welcome You have been Login Successfully', context,'Congratulations!' ,Color(0xff145a32));
+
+                        }).onError((error, stackTrace){
+                         FlushBar().showFlushBar(error.toString(), context, 'Error',const Color(0xffb03a2e));
+                        });
+                    }
                   },
                       ),
                        15.h,
@@ -81,9 +104,13 @@ class _SignInState extends State<SignIn> {
                     child: ReuseableDivider(),
                   ),
                       15.h,
-                      const SocialLoginButtons(text: 'Google', image: 'assets/google.svg'),
+                      GestureDetector(
+                          onTap: (){
+                            FirebaseServices().signInWithGoogle(context);
+                          },
+                          child: const SocialLoginButtons(text: 'Google', image: 'assets/google.svg')),
                       10.h,
-                      const SocialLoginButtons(text: 'Facebook', image: 'assets/fb.svg'),
+                      const SocialLoginButtons(text: 'Apple', image: 'assets/apple.svg'),
                       15.h,
                 const BottomTextButton(),
                               ],),

@@ -24,7 +24,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
   @override
   Widget build(BuildContext context) {
-       debugPrint('Print error');
     return Consumer<BottomNavProvider>(
       builder: (context, value, child){
         return Scaffold(

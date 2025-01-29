@@ -16,7 +16,7 @@ class SocialLoginButtons extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(
-            color: AppConstants.socialButtonBorderColor,
+            color: AppConstants.profileBorderColor,
           )
       ),
       child: Row(

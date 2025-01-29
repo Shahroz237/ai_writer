@@ -4,15 +4,11 @@ import 'package:ai_writer/utils/reusable/custom_textfield.dart';
 import 'package:ai_writer/utils/textstyles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/countries.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});
-
   @override
   State<PersonalInfo> createState() => _PersonalInfoState();
 }
-
 class _PersonalInfoState extends State<PersonalInfo> {
   final nameController=TextEditingController();
   final emailController=TextEditingController();
@@ -113,8 +109,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   selectedCountryCode = '+${country.dialCode}';
                 });
                 Navigator.pop(context);
-              },
-            );
+              },);
           }).toList(),
         );
       },

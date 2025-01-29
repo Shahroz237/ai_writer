@@ -39,7 +39,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ],
             ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
             Stack(
               children:[ Center(
                 child: Container(

@@ -2,8 +2,6 @@ import 'package:ai_writer/utils/app_constants/constants.dart';
 import 'package:ai_writer/utils/gap/gap.dart';
 import 'package:ai_writer/utils/reusable/custom_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../utils/reusable/custom_textfield.dart';
 import '../../../utils/textstyles/text_styles.dart';
 
